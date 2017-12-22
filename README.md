@@ -1,5 +1,7 @@
 # Postnummer
 
+[![Build Status](https://travis-ci.org/jksolbakken/postnummer.svg?branch=master)](https://travis-ci.org/jksolbakken/postnummer)
+
 Superenkel webtjeneste for å slå opp norske postnummer.
 
 For å bygge: `./gradlew clean fatJar`
