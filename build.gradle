@@ -7,12 +7,12 @@ apply plugin: 'org.junit.platform.gradle.plugin'
 
 buildscript {
    ext {
-      gradle_version = '4.4.1'
-      kotlin_version = '1.2.10'
-      spark_version = '2.5.4'
-      slf4j_version = '1.8.0-beta0'
+      gradle_version = '4.9'
+      kotlin_version = '1.2.51'
+      spark_version = '2.7.2'
+      slf4j_version = '1.8.0-beta2'
       spek_version = '1.1.5'
-      junit_platform_version = '1.0.1'
+      junit_platform_version = '1.3.0-M1'
       kluent_version = '1.32'
    }
 
@@ -24,7 +24,7 @@ buildscript {
 
    dependencies {
       classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-      classpath "org.junit.platform:junit-platform-gradle-plugin:$junit_platform_version"
+      classpath "org.junit.platform:junit-platform-gradle-plugin:1.2.0"
    }
 }
 
