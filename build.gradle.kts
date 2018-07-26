@@ -1,4 +1,4 @@
-val version = "1"
+version = 1
 
 val gradle_version = "4.9"
 val kotlin_version = "1.2.51"
@@ -64,12 +64,12 @@ tasks.withType<Wrapper> {
 }
 
 val fatJar = task("fatJar", type = Jar::class) {
-   baseName = "${project.name}-${version}-all"
+   baseName = "${project.name}-all"
    manifest {
-      attributes["Implementation-Title"] = "postnummer"
+      attributes["Implementation-Title"] = "${project.name}"
       attributes["Main-Class"] = "$mainClass"
    }
-   from(configurations.runtime.map({ if (it.isDirectory) it else zipTree(it) }))
+   from(configurations.runtime.map { if (it.isDirectory) it else zipTree(it) })
    with(tasks["jar"] as CopySpec)
 }
 

@@ -28,16 +28,16 @@ fun main(args: Array<String>) {
    get("/:postnr") { req, res ->
       val postnr = req.params("postnr") ?: "-1"
       res.type("application/json")
-      placesMap.get(postnr)?.toJson()
+      placesMap[postnr]?.toJson()
    }
 }
 
 fun loadPlaces(path: String): Map<String, Poststed> {
-   val result = PoststedLoader().loadFromCsv(path)
-   return when (result) {
-      is LoadResult.Success -> result.places.map { it.postnummer to it }.toMap()
+   val poststeder = PoststedLoader().loadFromCsv(path)
+   return when (poststeder) {
+      is LoadResult.Success -> poststeder.places.map { it.postnummer to it }.toMap()
       is LoadResult.Failure -> throw RuntimeException(
-         "Error while loading poststed data: ${result.reason}")
+         "Error while loading poststed data: ${poststeder.reason}")
    }
 }
 
