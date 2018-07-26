@@ -21,6 +21,10 @@ fun main(args: Array<String>) {
       res.body("Oops, that didn't go so well...")
    }
 
+   after("/*") { _, res ->
+      res.header("Server", "El Servero")
+   }
+
    get("/isAlive") { _, _ -> "Yepp!" }
 
    get("/isReady") { _, _ -> "Yepp!" }
