@@ -44,7 +44,6 @@ dependencies {
 repositories {
    jcenter()
    mavenCentral()
-   maven("https://repo.adeo.no/repository/maven-releases/")
 }
 
 java {
